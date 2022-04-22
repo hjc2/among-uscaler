@@ -56,10 +56,10 @@ def drawCrew(pix, x, y, color, width):
   pix[x + width * (y+4) + 4] = color
 
 #color = (255,0,0)
-filename = '12x12'
+filename = '128x128'
 filefull = filename + '.png'
 fileout = filename + '-result.png'
-path = os.path.join('example-images/', filefull)
+path = os.path.join('test-images/', filefull)
 outPath = os.path.join('results/', fileout)
 
 im = Image.open(path)
