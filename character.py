@@ -55,7 +55,7 @@ def drawCrew(pix, x, y, color, width):
   pix[x + width * (y+4) + 4] = color
 
 #color = (255,0,0)
-im = Image.open('64x64.png')
+im = Image.open('12x12.png')
 pixval = list(im.getdata())
 
 im2 = Image.new(im.mode, (im.size[0] * 6, im.size[1] * 6))
