@@ -2,6 +2,7 @@
 from cmath import pi
 from unittest import result
 from PIL import Image
+import os
 
 def drawCrew(pix, x, y, color, width):
   #pix[x + img.size[1] * y] = (255,255,255)
@@ -55,7 +56,13 @@ def drawCrew(pix, x, y, color, width):
   pix[x + width * (y+4) + 4] = color
 
 #color = (255,0,0)
-im = Image.open('12x12.png')
+filename = '12x12'
+filefull = filename + '.png'
+fileout = filename + '-result.png'
+path = os.path.join('example-images/', filefull)
+outPath = os.path.join('results/', fileout)
+
+im = Image.open(path)
 pixval = list(im.getdata())
 
 im2 = Image.new(im.mode, (im.size[0] * 6, im.size[1] * 6))
@@ -73,5 +80,5 @@ while(j < im.size[1]):
   j += 1
 
 im2.putdata(pix)
-im2.save('result.png', 'PNG')
+im2.save(outPath, 'PNG')
 
