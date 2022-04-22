@@ -85,7 +85,7 @@ def drawMe(img):
 
   return(img2)
 
-im = Image.open("Checkerboard.png")
+im = Image.open("64x64.png")
 
 #print(list(im.getdata()))
 
@@ -102,7 +102,7 @@ im2 = drawMe(im)
 #im2.save('result.png', 'PNG')
 
 color = (255,0,0)
-im = Image.open("Lewis_Mark.png")
+im = Image.open("lenna.png")
 pixval = list(im.getdata())
 
 im2 = Image.new(im.mode, (im.size[0] * 6, im.size[1] * 6))
@@ -111,9 +111,6 @@ pix = list(im2.getdata())
 i = 0
 j = 0
 
-
-#print(im.size[0])
-
 while(j < im.size[1]):
   while(i < im.size[0]):
     drawCrew(pix, i * 6, j * 6, pixval[i + j * im.size[0]], im.size[0]*6)
@@ -121,20 +118,6 @@ while(j < im.size[1]):
     print(i + j * im.size[0])
   i = 0
   j += 1
-
-
-
-# while(i < im2.size[1]):
-#   im2 = drawCrew(im2, i*6, 0, pixval[i])
-#   i += 1
-
-
-#int(i / 6) + int(j * im2.size[0] / 6)
-
-# im2 = drawCrew(im2, 0,0, pixval[0])
-# im2 = drawCrew(im2, 6,0, pixval[1])
-# im2 = drawCrew(im2, 0,6, pixval[2])
-# im2 = drawCrew(im2, 6,6, pixval[3])
 
 im2.putdata(pix)
 im2.save('result.png', 'PNG')
